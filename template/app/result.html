@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{%load static %}
+<html>
+<head>
+	<title>Result</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/app.css'%}">
+	<style type="text/css">
+	.bg-img {
+  background-image: url("{% static "image/5.jpg" %}");
+
+  min-height: 100%;
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+</style>
+</head>
+<body style=background:Black;color:Black;font-weight:Bold;font-family:georgia>
+	<div class='bg-img'> 
+	<center>
+	<form Method='POST'>
+	{% csrf_token %}
+	<table border=2px >
+		<tr>
+		<td>BusNumber</td>
+		<td>Busname</td>
+		<td>Bustime</td>
+		<td>BusFare</td>
+		<td>Book the bus</td>
+		</tr>
+		       <tr>
+		       <td>{{ Ob4 }}</td>
+		       <td>{{ Ob1 }}</td>
+		       <td>{{ Ob2 }}</td>
+		       <td>{{ Ob3  }}</td>
+		       <td><input type="submit" name="submit" value='Book'></td>
+		       </tr>
+	</table>
+	</center>
+	</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+	<title>Booking_page</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}">
+	<style type="text/css">
+	.bg-img {
+  background-image: url("{% static "image/11.jpg" %}");
+
+  min-height: 100%;
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  right:1000px;
+  top:70px;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color:Black;
+  color:Blue;
+}
+</style>
+</head>
+<body style=Background:Black;color:Red>
+	<div class='bg-img'>
+    <h1 style=color:Black;font-weight:Bold;font-family:georgia,garamond,serif;font-style:italic;>H.A.M.S. Bus-Booking Website</h1>
+  <h3 style=color:Black;font-weight:Bold;font-family:georgia,garamond,serif;font-style:italic;>Enter the Starting place and destination place To check the availability of buses</h3>
+		<center>
+		<form method="POST" actio='/result' class='container'>
+			{{ sd.as_p }}
+			{% csrf_token %}
+			<input type="submit" name="submit" value='Search'>
+		</form>
+		</center>
+</body>
+</html>

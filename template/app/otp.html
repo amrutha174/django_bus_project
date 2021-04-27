@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{%load static %}
+<html>
+<head>
+	<title>Otp Verification</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/app.css'%}">
+	<style type="text/css">
+	.bg-img {
+  background-image: url("{% static "image/7.PNG" %}");
+
+  min-height: 100%;
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  right: 1000px;
+  top:50px;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color:Black;
+  color:Blue;
+}
+</style>
+</head>
+<body style=Background:Black;color:Blue>
+	<div class="bg-img">
+	<center>
+	<form method="POST" class='container'>
+		{{ ds.as_p }}<br/>
+		{% csrf_token %}
+		<input type="submit" name="submit">
+	</form>
+	</center>
+</div>
+</body>
+</html>

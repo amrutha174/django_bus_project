@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+	<title>Confirm page</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/app.css'%}">
+	<style type="text/css">
+	.bg-img {
+  background-image: url("{% static "image/5.jpg" %}");
+
+  min-height: 100%;
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+</style>
+</head>
+<body style=Background:Black;color:Black>
+<div class="bg-img">
+<center>
+<form method=POST>
+ {% csrf_token %}
+ <h1>Click yes to book the bus</h1>
+ {{ reg_lst.as_p }}
+ <input type="submit" name="btn" value="submit">
+</form>
+</center>
+</div>
+</body>
+</html>

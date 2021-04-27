@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/app.css'%}">
+	<style type="text/css">
+	.bg-img {
+  background-image: url("{% static "image/bus.jpg" %}");
+
+  min-height: 100%;
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+</style>
+</head>
+
+<body style=background:Black;color:Blue>
+	<div class='bg-img'>
+	<h1 style=color:Black;font-weight:Bold;font-family:georgia,garamond,serif;font-style:italic;>Welcome to H.A.M.S. Bus-Booking Website</h1>
+	<center>
+	<h2 style=color:#000080;font-weight:Bold;font-family:georgia,garamond,serif;font-style:italic;>-TRAVEL WITH SOMEONE YOU CAN TRUST!!!!</h2></marquee>
+	</center>
+	<center>
+	<form method='POST' class='container'>
+		{{ lst.as_p }}
+		{% csrf_token %}
+		<input type="submit" name="submit">
+	</form>
+	</center>
+	</div>
+</body>
+</html>
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+	<title>Record Exits</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/app.css'%}">
+	<style type="text/css">
+	.bg-img {
+  background-image: url("{% static "image/8.jpg" %}");
+
+  min-height: 100%;
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+</style>
+</head>
+<body style=Background:Black;color:Blue>
+	<div class ='bg-img'>
+	<form method="POST">
+	<h1>The Phone Number Or Email you have entered is alreday present in our records please eneter a new one</h1>
+	<input type="submit" name="submit" value='Redirect'>
+	</form>
+</div>
+</body>
+</html>
